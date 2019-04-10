@@ -1,9 +1,31 @@
-.App {
-  text-align: center;
+:root {
+  font-size: 10px;
 }
 
-*{
+@mixin bg($image) {
+  background: url($image);
+  background-size: cover;
+}
+
+.App {
+  text-align: center;
+  @include bg("./images/sunny.jpg");
+}
+
+* {
   box-sizing: border-box;
+}
+
+h1 {
+  font-size: 7.8rem;
+  line-height: 7rem;
+}
+
+p {
+  font-size: 5rem;
+  max-width: 50.5rem;
+  padding: 0 2.5rem;
+  margin-top: 0;
 }
 
 .App-logo {
@@ -13,6 +35,7 @@
 }
 
 .App-header {
+  font-family: "Quicksand", sans-serif;
   background-size: cover;
   min-height: 100vh;
   display: flex;
@@ -22,6 +45,18 @@
   font-size: calc(10px + 2vmin);
   color: #f7f7f7;
   text-shadow: 0 3px 4.45px rgba(0, 0, 0, 0.17);
+
+  &.sunny {
+    // background: url(./images/sunny.jpg);
+    @include bg("./images/sunny.jpg");
+  }
+
+  &.wind,
+  &.drizzle,
+  &.clouds {
+    // background: url(./images/rainy.jpg);
+    @include bg("./images/rainy.jpg");
+  }
 }
 
 .App-link {

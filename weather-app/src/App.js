@@ -4,17 +4,6 @@ import sunny from "./images/sunny.jpg";
 import rainy from "./images/rainy.jpg";
 import "./App.scss";
 
-const sectionStyle = currentWeather => {
-  backgroundImage: `url(${sunny})`;
-  // if the weather is gloomy, return rainy background
-  // if (currentWeather === "clouds" || currentWeather === "rain") {
-  //   import("./images/rainy.jpg").then(img => return backgroundImage: `url(${img})`);
-  //   // or return a sunny one if it's sunny
-  // }else if(currentWeather === "sun" || currentWeather === "haze"){
-  //     import("./images/sunny.jpg").then(img => return backgroundImage: `url(${img})`);
-  // }
-};
-
 class App extends Component {
   state = {
     data: {},
@@ -37,6 +26,8 @@ class App extends Component {
       .catch(err => {
         throw new Error(err);
       });
+
+    // this.updateStlyes(currentWeather);
   }
 
   // get user location
@@ -59,15 +50,13 @@ class App extends Component {
     if (!isLoaded) {
       return (
         <div className="App">
-          <header className="App-header" style={sectionStyle}>
-            ...loading
-          </header>
+          <header className="App-header">...loading</header>
         </div>
       );
     } else {
       return (
         <div className="App">
-          <header className={`App-header ${sectionStyle}`} style={sectionStyle}>
+          <header className={`App-header ${currentWeather}`}>
             <h1>
               Current <br /> weather conditions
             </h1>

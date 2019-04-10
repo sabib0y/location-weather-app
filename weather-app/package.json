@@ -1,6 +1,8 @@
 {
   "name": "weather-app",
   "version": "0.1.0",
+  "description": "A simple weather app that renders different content based on the user's location",
+  "author": "Paul Idemudia",
   "private": true,
   "dependencies": {
     "node-sass": "^4.11.0",

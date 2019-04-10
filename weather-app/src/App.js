@@ -50,21 +50,30 @@ class App extends Component {
     if (!isLoaded) {
       return (
         <div className="App">
-          <header className="App-header">...loading</header>
+          <header className="App-body">...loading</header>
         </div>
       );
     } else {
       return (
         <div className="App">
-          <header className={`App-header ${currentWeather}`}>
-            <h1>
-              Current <br /> weather conditions
-            </h1>
-            <p>
-              In {data.name}, it's {data.main.temp} degrees celcius with mainly{" "}
-              {data.weather[0].main.toLowerCase()} outside.
-            </p>
-          </header>
+          <div className={`App-wrapper ${currentWeather}`}>
+            <div className={"App-body"}>
+              <h1>
+                Current <br /> weather conditions
+              </h1>
+              <p>
+                In {data.name},<br />
+                it's currently {data.main.temp}&deg;C and{" "}
+                {data.weather[0].main.toLowerCase()} outside.
+              </p>
+            </div>
+            <footer>
+              Weahter information courtsey of{" "}
+              <a href="https://openweathermap.org" target="_blank">
+                open weather map
+              </a>
+            </footer>
+          </div>
         </div>
       );
     }

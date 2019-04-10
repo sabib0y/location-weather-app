@@ -4,15 +4,22 @@ import sunny from "./images/sunny.jpg";
 import rainy from "./images/rainy.jpg";
 import "./App.scss";
 
-const sectionStyle = {
-  backgroundImage: `url(${sunny})`
-  // backgroundImage:  "url(" + sunny + ")"
+const sectionStyle = currentWeather => {
+  backgroundImage: `url(${sunny})`;
+  // if the weather is gloomy, return rainy background
+  // if (currentWeather === "clouds" || currentWeather === "rain") {
+  //   import("./images/rainy.jpg").then(img => return backgroundImage: `url(${img})`);
+  //   // or return a sunny one if it's sunny
+  // }else if(currentWeather === "sun" || currentWeather === "haze"){
+  //     import("./images/sunny.jpg").then(img => return backgroundImage: `url(${img})`);
+  // }
 };
 
 class App extends Component {
   state = {
     data: {},
-    isLoaded: false
+    isLoaded: false,
+    currentWeather: ""
   };
 
   getWeather(lat, lon) {
@@ -23,7 +30,8 @@ class App extends Component {
       .then(data => {
         this.setState({
           data,
-          isLoaded: true
+          isLoaded: true,
+          currentWeather: data.weather[0].main.toLowerCase()
         });
       })
       .catch(err => {
@@ -47,7 +55,7 @@ class App extends Component {
   }
 
   render() {
-    const { isLoaded, data } = this.state;
+    const { isLoaded, data, currentWeather } = this.state;
     if (!isLoaded) {
       return (
         <div className="App">
@@ -59,13 +67,13 @@ class App extends Component {
     } else {
       return (
         <div className="App">
-          <header className="App-header" style={sectionStyle}>
+          <header className={`App-header ${sectionStyle}`} style={sectionStyle}>
             <h1>
               Current <br /> weather conditions
             </h1>
             <p>
-              In {data.name}, it's {data.main.temp} degrees celcius with{" "}
-              {data.weather[0].description} outside.
+              In {data.name}, it's {data.main.temp} degrees celcius with mainly{" "}
+              {data.weather[0].main.toLowerCase()} outside.
             </p>
           </header>
         </div>

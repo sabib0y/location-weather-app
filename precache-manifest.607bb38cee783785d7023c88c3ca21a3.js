@@ -12,19 +12,19 @@ self.__precacheManifest = [
     "url": "/location-weather-app/static/js/runtime~main.39a5831f.js"
   },
   {
-    "revision": "41b0ec62e4c2ca3208d5",
-    "url": "/location-weather-app/static/js/main.31ae189b.chunk.js"
+    "revision": "b59f29f3e04289d9fe84",
+    "url": "/location-weather-app/static/js/main.8befc27c.chunk.js"
   },
   {
     "revision": "d82afacfb8046780bdff",
     "url": "/location-weather-app/static/js/2.c272f57a.chunk.js"
   },
   {
-    "revision": "41b0ec62e4c2ca3208d5",
-    "url": "/location-weather-app/static/css/main.621051bd.chunk.css"
+    "revision": "b59f29f3e04289d9fe84",
+    "url": "/location-weather-app/static/css/main.bc9ec629.chunk.css"
   },
   {
-    "revision": "d2622daa741fafc5f3ea58a73bed7f89",
+    "revision": "af807e2087c240d6dcf71fb36d18090f",
     "url": "/location-weather-app/index.html"
   }
 ];

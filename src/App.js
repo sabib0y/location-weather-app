@@ -8,6 +8,16 @@ class App extends Component {
     currentWeather: ""
   };
 
+  getLocation() {
+    if (navigator.geolocation)
+      navigator.geolocation.getCurrentPosition(position => {
+        const thisLat = position.coords.latitude;
+        const thisLon = position.coords.longitude;
+        this.getWeather(thisLat, thisLon);
+      });
+    else console.log("Geolocation not supported");
+  }
+
   getWeather(lat, lon) {
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=b7ad7404a64ed06ca470ee07237c07e7&units=metric`
@@ -23,19 +33,6 @@ class App extends Component {
       .catch(err => {
         throw new Error(err);
       });
-
-    // this.updateStlyes(currentWeather);
-  }
-
-  // get user location
-  getLocation() {
-    if (navigator.geolocation)
-      navigator.geolocation.getCurrentPosition(position => {
-        const thisLat = position.coords.latitude;
-        const thisLon = position.coords.longitude;
-        this.getWeather(thisLat, thisLon);
-      });
-    else console.log("Geolocation not supported");
   }
 
   componentDidMount() {

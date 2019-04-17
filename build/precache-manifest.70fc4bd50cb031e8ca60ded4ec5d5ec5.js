@@ -8,23 +8,27 @@ self.__precacheManifest = [
     "url": "/location-weather-app/static/media/rainy.584a02f7.jpg"
   },
   {
+    "revision": "0ca89a1e695ebd5df39b03eb13c1ef9e",
+    "url": "/location-weather-app/static/media/haze.0ca89a1e.jpg"
+  },
+  {
     "revision": "a05dcb191102a4f2742f",
     "url": "/location-weather-app/static/js/runtime~main.39a5831f.js"
   },
   {
-    "revision": "41b0ec62e4c2ca3208d5",
-    "url": "/location-weather-app/static/js/main.31ae189b.chunk.js"
+    "revision": "6ebb127473f8e8a454c9",
+    "url": "/location-weather-app/static/js/main.8befc27c.chunk.js"
   },
   {
     "revision": "d82afacfb8046780bdff",
     "url": "/location-weather-app/static/js/2.c272f57a.chunk.js"
   },
   {
-    "revision": "41b0ec62e4c2ca3208d5",
-    "url": "/location-weather-app/static/css/main.621051bd.chunk.css"
+    "revision": "6ebb127473f8e8a454c9",
+    "url": "/location-weather-app/static/css/main.291f2e5d.chunk.css"
   },
   {
-    "revision": "d2622daa741fafc5f3ea58a73bed7f89",
+    "revision": "50e5c1f322f822d9e6ec8094747c3101",
     "url": "/location-weather-app/index.html"
   }
 ];

@@ -6,7 +6,7 @@
 
 Weather web application that describes the current weather based on your location
 
-# Challenges faced when building the app
+# Challenges 
 
 Being that I wanted the background to change based on the given weather, it took a while to figure out the most efficient way to import the right image files without making unnecessary requests.
 

@@ -2,7 +2,7 @@
 # Location Weather App
 
 ![alt text](https://i.imgur.com/3pjNSNp.png)
-[DEMO](https://www.google.com)
+[DEMO](https://sabib0y.github.io/location-weather-app/)
 
 Weather web application that describes the current weather based on your location
 

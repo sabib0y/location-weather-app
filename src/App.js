@@ -1,11 +1,12 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import "./App.scss";
 
 class App extends Component {
   state = {
     data: {},
     isLoaded: false,
-    currentWeather: ""
+    currentWeather: "",
+    computedDescription: "",
   };
 
   getLocation() {
@@ -29,10 +30,25 @@ class App extends Component {
           isLoaded: true,
           currentWeather: data.weather[0].main.toLowerCase()
         });
+        this.fixGrammar();
       })
       .catch(err => {
         throw new Error(err);
       });
+  }
+
+  fixGrammar(){
+    const weatherString = this.state.currentWeather;
+    let setText ;
+
+    if (weatherString === 'clouds'){
+      setText = "it's cloudy outside"
+    }else if(weatherString === 'wind'){
+      setText = "it's windy outside"
+    }else{
+      setText = weatherString;
+    }
+    this.setState({computedDescription: setText});
   }
 
   componentDidMount() {
@@ -58,7 +74,7 @@ class App extends Component {
               <p>
                 In {data.name},<br />
                 it's currently {data.main.temp}&deg;C and{" "}
-                {data.weather[0].main.toLowerCase()} outside.
+                {this.state.computedDescription}
               </p>
             </div>
             <footer>

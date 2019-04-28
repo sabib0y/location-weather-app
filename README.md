@@ -1,4 +1,8 @@
-# Location-weather-app
+
+# Location Weather App
+
+![alt text](https://i.imgur.com/3pjNSNp.png)
+[DEMO](https://www.google.com)
 
 Weather web application that describes the current weather based on your location
 
@@ -10,8 +14,12 @@ By feeding the weather description as a class name, I could then map different i
 
 It's just a fun way of altering the visuals of the website based on the user's real time input by loading the web app.
 
+# Testing
+
+Tested on Google Chrome, Firefox and Safari, both mobile and desktop
+
 # To improve
 
-There's currently an issue with the phrasing, being that parts of the sentence describing the weather are dynamically populated, in some instances, the grammatical structure of the sentence breaks.
+There's currently an issue with the phrasing, being that parts of the sentence describing the weather are dynamically populated, in some instances, the grammatical structure of the sentence breaks. I have added in a check to adjust the grammar but would need to factor in all the possible options.. there might be a cleaner way to achieve this.
 
 Thinking of incorporating some ISS (International Space Station) tracking data relative to the user's location and if/when they can see it zoom past around them.
